@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:openDrawer="start"
+    android:id="@+id/drawer"
+    tools:context=".ScanQRcodeActivity"
+    android:background="#000000">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|center_vertical">
+
+        <!-- <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/joo"
+            android:scaleType="centerCrop"/>
+-->
+
+
+        <!--<ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/dark_shade"/>-->
+
+
+        <FrameLayout
+            android:id="@+id/rel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true">
+
+            <fragment
+                android:id="@+id/barcode_scanner"
+                android:name="info.androidhive.barcode.BarcodeReader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:auto_focus="true"
+                app:use_flash="false" />
+
+            <info.androidhive.barcode.ScannerOverlay
+                android:id="@+id/scannerOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#44000000"
+                app:line_color="#f21515"
+                app:line_speed="10"
+                app:line_width="10"
+                app:square_height="300"
+                app:square_width="300" />
+
+
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_square_crop" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            android:background="#99969595">
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/info"
+            android:layout_marginEnd="5dp"
+            android:id="@+id/image"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+
+    <ProgressBar
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/progress"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        android:layout_gravity="center"
+        />
+
+
+</FrameLayout>
+
+
+    <!-- <include
+         android:layout_width="300dp"
+         android:layout_height="match_parent"
+         layout="@layout/drawerlayout"
+         android:layout_gravity = "start"/>
+
+ -->
+
+
